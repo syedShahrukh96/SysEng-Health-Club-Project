@@ -23,6 +23,20 @@ public class MemberService {
 
 
 
+    /**
+     * The registerMember function is used to register a new member.
+     *
+     *
+     * @param  firstName Store the first name of the member
+     * @param  lastName Get the last name of a member
+     * @param  dob Get the date of birth from the user
+     * @param email Get the email address of a member
+
+     * @param  mobileNumber Check if the mobile number exists in the csv file
+     * @param  membershipLevel Determine the membership level of the member
+     *
+     * @return A string
+     */
     public String registerMember(String firstName, String lastName, String dob, String email, String mobileNumber, String membershipLevel) {
         String memberID = generateMemberID();
 
@@ -75,6 +89,14 @@ public class MemberService {
 
 
 
+    /**
+     * The calculateAge function takes a Date object as an argument and returns the age of the person in years.
+     *
+     *
+     * @param dob Calculate the age of the person
+     *
+     * @return The age of a person in years
+     */
     private int calculateAge(Date dob) {
         long currentTimeMillis = System.currentTimeMillis();
         Date currentDate = new Date(currentTimeMillis);
@@ -87,6 +109,14 @@ public class MemberService {
 
 
 
+    /**
+     * The isMobileNumberExists function checks if the mobile number exists in the member data file.
+     *
+     *
+     * @param mobileNumber Check if the mobile number exists in the member data file
+     *
+     * @return A boolean value
+     */
     private static boolean isMobileNumberExists(String mobileNumber) throws IOException {
         try (BufferedReader br = new BufferedReader(new FileReader(Constants.MEMBER_DATA_FILE))) {
             String line;
@@ -113,6 +143,13 @@ public class MemberService {
 
 
 
+    /**
+     * The getLastGeneratedIdFromCSV function reads the member data file and returns the last generated id.
+     *
+     *
+     *
+     * @return The last member id in the csv file
+     */
     private static int getLastGeneratedIdFromCSV() {
         int lastMemberId = Constants.DEFAULT_STARTING_MEMBER_ID;
         try (BufferedReader br = new BufferedReader(new FileReader(Constants.MEMBER_DATA_FILE))) {
@@ -135,6 +172,14 @@ public class MemberService {
 
 
 
+    /**
+     * The generateMemberID function generates a unique ID for each member.
+     * The function takes no parameters and returns the generated ID as a String.
+
+     *
+     *
+     * @return A string
+     */
     public static String generateMemberID() {
         lastGeneratedId++;
         return String.format("%08d", lastGeneratedId);
@@ -144,6 +189,20 @@ public class MemberService {
 
 
 
+    /**
+     * The updateMemberData function takes in a memberID, columnIndex and updateFunction as parameters.
+     * It then checks if the file exists or is empty. If it does not exist or is empty, an exception will be thrown.
+     * The function then reads all lines of the file into a list of strings called lines and sets boolean variable
+     * isUpdated to false initially. A for loop iterates through each line in the list of strings (lines) and splits
+     * each line by commas into columns array which contains all data from that particular row/line in the csv file.
+     * If there are more than 1
+     *
+     * @param  memberID Identify the member
+     * @param  columnIndex Specify the column that is to be updated
+     * @param updateFunction Pass in a function that will be used to update the data
+     *
+     * @return The memberid if the update is successful,
+     */
     public String updateMemberData(String memberID, int columnIndex, Function<String, String> updateFunction) throws IOException {
         Path path = Paths.get(Constants.MEMBER_DATA_FILE);
 
@@ -176,6 +235,13 @@ public class MemberService {
 
 
 
+    /**
+     * The cancelMembership function takes in a member ID as a parameter and cancels the membership of that member.
+     *
+     *
+     * @param cancelMemberID Identify the member to be cancelled
+     *
+     */
     public String cancelMembership(String cancelMemberID) throws IOException {
         Path path = Paths.get(Constants.MEMBER_DATA_FILE);
         List<String> lines = Files.readAllLines(path);
@@ -194,6 +260,17 @@ public class MemberService {
 
 
 
+    /**
+     * The checkInMemberID function takes in a memberID and checks to see if the membership has been cancelled.
+     * If it hasn't, then it updates the check-in count for that member by 1.
+
+     *
+     * @param  memberID Identify the member
+     *
+     * @return A string
+     *
+     *
+     */
     public String checkInMemberID(String memberID) throws IOException {
         Path path = Paths.get(Constants.MEMBER_DATA_FILE);
         List<String> lines = Files.readAllLines(path);
@@ -218,6 +295,19 @@ public class MemberService {
 
 
 
+    /**
+     * The isFormValid function checks the validity of a registration form.
+     * It returns an empty string if all fields are valid, or a non-empty error message otherwise.
+     *
+     *
+     * @param  firstName Pass the value of the firstnameid edittext to this function
+     * @param  lastName Check the length of the last name entered
+     * @param  dobFormat Check the date format of the dobid field
+     * @param  emailFormat Check if the email address entered by the user is valid
+     * @param  mobileNumberFormat Check the format of the mobile number
+     *
+     * @return An empty string if the form is valid, or an error message otherwise
+     */
     public String isFormValid(String firstName, String lastName, String dobFormat, String emailFormat, String mobileNumberFormat) {
 
         // Check firstNameID length >= 3 characters

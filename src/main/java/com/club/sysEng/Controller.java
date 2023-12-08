@@ -84,6 +84,14 @@ public class Controller  {
 
 
 
+    /**
+     * The NewMemberRegistration function is used to create a new member registration form.
+     *
+     *
+     *
+     * @return A string
+     *
+     */
     @FXML
     public void NewMemberRegistration() {
         //public String NewMemberRegistration(ActionEvent event)
@@ -107,6 +115,14 @@ public class Controller  {
 
 
 
+    /**
+     * The cancelMembership function is used to cancel a membership.
+     *
+     *
+     *
+     * @return A boolean value
+     *
+     */
     @FXML
     public void cancelMembership(){
         System.out.println("cancelMembership");
@@ -128,6 +144,15 @@ public class Controller  {
 
 
 
+    /**
+     * The memberCheckIn function is used to open the SysEngMemberCheckIn.fxml file, which allows a user to check in a member
+     * by entering their name and email address. The function also sets the title of the window that opens as &quot;SysEng Club Member CheckIn&quot;.
+
+     *
+     *
+     * @return The membercheckin
+     *
+     */
     @FXML
     public void memberCheckIn() {
         System.out.println("checkInMembership");
@@ -149,6 +174,16 @@ public class Controller  {
 
 
 
+    /**
+     * The SelectLevel function is used to select the membership level that the user wants.
+     * The function takes in a string value from the ComboBox and sets it equal to a variable called selectedLevel.
+     * Then, it prints out what was selected by using System.out.println(). Finally, it sets membershipPlan equal to
+     * whatever was selected in order for us to use this information later on when we create an account for them with their chosen plan type!
+
+     *
+     *
+     * @return The selected level
+     */
     @FXML
     public void SelectLevel() {
         String selectedLevel = membershipLevelID.getValue();
@@ -160,6 +195,14 @@ public class Controller  {
 
 
 
+    /**
+     * The memberRegistrationSubmit function is called when the user clicks on the submit button.
+     * It calls a service layer function to register a member and displays an error message if there are any errors in the form.
+
+     *
+     *
+     * @return A string
+     */
     @FXML
     void memberRegistrationSubmit() {
 
@@ -202,6 +245,16 @@ public class Controller  {
 
 
 
+    /**
+     * The SubmitCheckIn function is called when the user clicks on the &quot;Check In&quot; button.
+     * It takes in a member ID number from the text field and passes it to a function that checks if
+     * that member has checked in already. If they have, then an error message will be displayed, otherwise
+     * their name will be displayed as having checked in successfully.
+
+     *
+     *
+     * @return A string
+     */
     @FXML
     void SubmitCheckIn() throws IOException {
         String member_id = checkInNumber.getText();
@@ -216,6 +269,16 @@ public class Controller  {
 
 
 
+    /**
+     * The processMessage function takes in a String message and returns a String.
+     * If the message is an 8 digit number, it prepends &quot;Access Granted: &quot; to the front of it.
+     * Otherwise, it returns the original message as is.
+
+     *
+     * @param message Pass the message that is to be processed
+     *
+     * @return The message if it is not a number
+     */
     public String processMessage(String message) {
         String numberRegex = "\\b\\d{8}\\b";
         if (message.matches(numberRegex)) {
@@ -232,6 +295,15 @@ public class Controller  {
 
 
 
+    /**
+     * The membershipCancellation function is used to cancel a membership.
+     *
+     *
+     *
+     * @return The message that is displayed on the screen
+     *
+     *
+     */
     @FXML
     void membershipCancellation() throws IOException {
         String cancelMemberID =MembershipIdForCancellation.getText();
