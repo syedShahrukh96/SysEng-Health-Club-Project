@@ -6,14 +6,7 @@ import java.io.IOException;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * The MemberServiceTest class contains JUnit test cases for testing the methods
- * of the MemberService class in the SysEng Club application.
- * -
- * It includes tests for member registration, membership cancellation, and member check-in.
- * The tests cover various scenarios, such as new member registration, membership cancellation,
- * handling already cancelled memberships, and checking in members.
- */
+
 class MemberServiceTest {
 
     MemberService testService = new MemberService();
