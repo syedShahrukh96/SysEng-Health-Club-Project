@@ -1,11 +1,6 @@
 package com.club.sysEng;
 
-/**
- * The Constants class contains constant values and configurations used in the SysEng Club application.
- * -
- * This class was created on: 11/29/2023
- * Author:
- */
+
 public class Constants {
 
     // Number of visits (initialized to 0)
