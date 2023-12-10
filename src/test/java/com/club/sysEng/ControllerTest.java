@@ -129,43 +129,4 @@ class ControllerTest {
 
     }
 
-//    @Test
-//   public void memberRegistrationSubmitTest() throws IOException {
-//         firstName = "sam";
-//         lastName = "rockey";
-//         Dob = "1996-12-12";
-//         email = "Syed@gmail.com";
-//         mobileNumber = "3128668234";
-//         membershipLevel = "Purple";
-        // String expectedResult = "10000022";
-//
-//        when(memberService.registerMember(firstName,lastName,Dob,email,mobileNumber,membershipLevel)).thenReturn(expectedResult);
-
-
-
-//        TextField firstNameID = new TextField("sam");
-//        TextField lastNameID = new TextField("rockey");
-//        TextField DobID = new TextField("1996-12-12");
-//        TextField emailID = new TextField("Syed@gmail.com");
-//        TextField mobileNumberID = new TextField("3128668234");
-//        ComboBox<String> membershipLevelID = new ComboBox<>();
-//        membershipLevelID.getItems().addAll("Purple");
-//        membershipLevelID.setValue("Purple");
-//
-//        firstNameID.setText("sam");
-//        lastNameID.setText("rockey");
-//        DobID.setText("1996-12-12");
-//        emailID.setText("Syed@gmail.com");
-//        mobileNumberID.setText("9089089080");
-//        membershipLevelID.setValue("Purple");
-//
-//
-//        Controller controller = new Controller(memberService, firstNameID, lastNameID,DobID,emailID,mobileNumberID,membershipLevelID, checkResult);
-//        when(memberService.isFormValid(firstName, lastName,Dob, email, mobileNumber)).thenReturn("");
-//
-//
-//        // Act
-//        controller.memberRegistrationSubmit();
-//
-//    }
 }

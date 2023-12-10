@@ -10,7 +10,22 @@ import java.util.Date;
 import java.util.List;
 import java.util.function.Function;
 
-
+/**
+ *
+ * The MemberService class provides methods for managing member registration,
+ * data updates, membership cancellation, and check-in operations for a
+ * sysEng club.
+ * This class includes functionality to:
+ * - Register new members with unique member IDs.
+ * - Calculate member age based on date of birth.
+ * - Check if a mobile number already exists in the membership data.
+ * - Generate unique membership IDs.
+ * - Update member data for the number of visits and membership status.
+ * - Cancel a member's membership.
+ * - Check-in a member to track visits.
+ * - It interacts with a CSV file to store and retrieve
+ * - member data and performs various operations based on user inputs.
+ */
 public class MemberService {
 
     //Constants
@@ -311,12 +326,12 @@ public class MemberService {
     public String isFormValid(String firstName, String lastName, String dobFormat, String emailFormat, String mobileNumberFormat) {
 
         // Check firstNameID length >= 3 characters
-        if (firstName.length() <= 3) {
+        if (firstName.length() < 3) {
             return "Please enter a full first name with at least 3 characters.";
         }
 
         // Check lastNameID length >= 3 characters
-        if (lastName.length() <= 3) {
+        if (lastName.length() < 3) {
             return "Please enter a full last name with at least 3 characters.";
         }
 

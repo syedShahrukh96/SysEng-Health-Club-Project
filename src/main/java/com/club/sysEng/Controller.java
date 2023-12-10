@@ -13,7 +13,13 @@ import java.io.IOException;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 
-
+/**
+ * The Controller class manages user interactions and controls the SysEng Club application.
+ * -
+ *  * This class handles various actions such as new member registration, membership cancellation,
+ *  * member check-in, and related UI interactions. It interacts with the MemberService to
+ *  * validate and process user input and updates the user interface accordingly.
+ */
 public class Controller  {
 
     @FXML
@@ -94,7 +100,6 @@ public class Controller  {
      */
     @FXML
     public void NewMemberRegistration() {
-        //public String NewMemberRegistration(ActionEvent event)
         System.out.println("NewMemberRegistration");
         try {
             FXMLLoader loader  = new FXMLLoader(getClass().getResource("SysEngMemberRegistration.fxml"));

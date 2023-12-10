@@ -94,9 +94,9 @@
       <ComboBox fx:id="membershipLevelID" layoutX="487.0" layoutY="506.0" onAction="#SelectLevel" prefHeight="31.0" prefWidth="250.0">
          <items>
             <FXCollections fx:factory="observableArrayList">
-               <String fx:value="Green" />
-               <String fx:value="Purple" />
-               <String fx:value="Blue" />
+               <String fx:value="Green (6 Month)" />
+               <String fx:value="Purple (1 Year)" />
+               <String fx:value="Blue (3 Year)" />
             </FXCollections>
          </items>
       </ComboBox>
