@@ -1,0 +1,3 @@
+Membership Id,First Name,Last Name,DOB(yyyy-MM-dd),Age,Email ID,Mobile Number,membershipLevel,Membership Status,Visits
+10000001,shahrukh,syed,1996-06-14,27,syed@gmail.com,3128668048,Purple (1 Year),Cancelled,2
+10000002,Bugz,Bhadare Valente,2001-12-12,22,bugz@gmail.com,3128668045,Blue (3 Year),Activated,0
